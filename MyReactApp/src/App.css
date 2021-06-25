@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.vaderDiv {
+  border-style: solid;
+  border: 10px solid red;
+}
+
+.vaderImg {
+  max-width: 350px;
+  border: 5px dotted green; 
+}

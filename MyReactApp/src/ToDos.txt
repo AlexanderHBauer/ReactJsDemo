@@ -1,0 +1,10 @@
+- Create Slides
+- Showcase "react from 'react'" => generally required imports
+- show a function assignment to a button
+- export default
+- className instead of class
+- states
+
+ return () => all within the braces will be interpreted as html
+
+- include the tutorial by Dev Ed => {useState}

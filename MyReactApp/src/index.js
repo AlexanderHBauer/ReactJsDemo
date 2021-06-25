@@ -4,15 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-function testItem(props) {
+export function testItem(content) {
     return (
-    <p>Given prop: {props.content}</p>
+    <p>Given prop: {content}</p>
     )
 }
 const myItem = <testItem content="rararara"/>
 
 ReactDOM.render(
-  myItem,
   <React.StrictMode>
     <App />
     <testItem content="hohoho"/>

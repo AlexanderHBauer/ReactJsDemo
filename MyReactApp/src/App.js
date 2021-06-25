@@ -1,27 +1,14 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import './index.js';
+import MyTest from './MyTest';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-          <testItem content="yolao"/>
-        </a>
-      </header>
-      
-      <testItem content="AHB"/>
+    <div>
+      <h1>I despise React</h1>
+      <MyTest name="Testerino1"/>
+      <MyTest name="John Cena"/>
     </div>
   );
 }
