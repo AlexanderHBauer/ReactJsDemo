@@ -46,7 +46,7 @@
 }
 
 .mainDiv {
-
+  display: flex;
 }
 
 .previewSection {

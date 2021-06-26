@@ -4,6 +4,7 @@ import './App.css';
 import './index.js';
 // React JS - custom elements
 import Slide from './Slide';
+import MiniSlide from './MiniSlide';
 import Helpers from './Helpers';
 // Images (static)
 import slideImg001 from './myimages/test001.PNG';
@@ -17,36 +18,41 @@ function App() {
   let helper = new Helpers();
   let currentImgSource = slideImg002;
   let imgArr = helper.getImgArr();
-  let [cntr, setCntr] = useState(0);
+  let [cntr, setCntr] = useState(1);
   let [currentImg, setcurrentImg] = useState(slideImg001);
   const nextImage = () => {
       for (let i = 0; i < imgArr.length; i++){
         if (currentImg === imgArr[i] && ((i+1) == imgArr.length)){
           currentImgSource = slideImg001;
-            console.log("Used default image src.")
-            setCntr(cntr - imgArr.length);
+            console.log("Used default image src.");
         }
         else if (currentImg === imgArr[i]){
           try {
             currentImgSource =  imgArr[i + 1];
             console.log(`Used nex img src: ${i+1}`)
+            setCntr(cntr + 1);
           }
           catch {
             currentImgSource = slideImg001;
-            console.log("Used default image src.")
-            setCntr(cntr - imgArr.length);
+            console.log("Used default image src.");
           }
         }
         }
     setcurrentImg(currentImgSource);
-    setCntr(cntr + 1);
+    if (cntr == imgArr.length){
+      cntr = 0;
+    }
+    //setCntr(cntr + 1);
   };
 
   return (
     <div className="mainDiv">
       <div className="previewSection">
         <button onClick={nextImage}>{cntr}</button>
-        <div>aaa</div>
+        <MiniSlide header="Header 1" body="one" imgSrc={slideImg001}/>
+        <MiniSlide header="Header 1" body="one" imgSrc={slideImg002}/>
+        <MiniSlide header="Header 1" body="one" imgSrc={slideImg003}/>
+        <MiniSlide header="Header 1" body="one" imgSrc={slideImg004}/>
       </div>
       <div className="currentSlideShown">
         <Slide header="Header 1" body="one" imgSrc={currentImg}/>
