@@ -14,45 +14,45 @@ import slideImg004 from './myimages/test004.jpg';
 
 
 function App() {
-  let counter = 0;
+
+  // Custom fuctionality code
   let helper = new Helpers();
   let currentImgSource = slideImg002;
   let imgArr = helper.getImgArr();
+  // React JS "useState" variables
   let [cntr, setCntr] = useState(1);
   let [currentImg, setcurrentImg] = useState(slideImg001);
+  // Manipulating the state variables
   const nextImage = () => {
       for (let i = 0; i < imgArr.length; i++){
         if (currentImg === imgArr[i] && ((i+1) == imgArr.length)){
           currentImgSource = slideImg001;
-            console.log("Used default image src.");
+            setCntr(cntr - cntr + 1);
         }
         else if (currentImg === imgArr[i]){
           try {
             currentImgSource =  imgArr[i + 1];
-            console.log(`Used nex img src: ${i+1}`)
             setCntr(cntr + 1);
           }
           catch {
             currentImgSource = slideImg001;
-            console.log("Used default image src.");
+            setCntr(cntr - cntr + 1);
           }
         }
         }
+    // Set new value for "currentImg" state via the value of currentimgSource
     setcurrentImg(currentImgSource);
-    if (cntr == imgArr.length){
-      cntr = 0;
-    }
-    //setCntr(cntr + 1);
   };
 
+  // Render HTML
   return (
     <div className="mainDiv">
       <div className="previewSection">
         <button onClick={nextImage}>{cntr}</button>
-        <MiniSlide header="Header 1" body="one" imgSrc={slideImg001}/>
-        <MiniSlide header="Header 1" body="one" imgSrc={slideImg002}/>
-        <MiniSlide header="Header 1" body="one" imgSrc={slideImg003}/>
-        <MiniSlide header="Header 1" body="one" imgSrc={slideImg004}/>
+        <MiniSlide header="Header 1" imgSrc={slideImg001}/>
+        <MiniSlide header="Header 1" imgSrc={slideImg002}/>
+        <MiniSlide header="Header 1" imgSrc={slideImg003}/>
+        <MiniSlide header="Header 1" imgSrc={slideImg004}/>
       </div>
       <div className="currentSlideShown">
         <Slide header="Header 1" body="one" imgSrc={currentImg}/>

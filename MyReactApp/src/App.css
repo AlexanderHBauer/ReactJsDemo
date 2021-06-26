@@ -62,7 +62,7 @@
 }
 
 .Slide {
-  max-width: 100%;
+  width: 100%;
   border: 5px solid red;
   border-radius: 15px;
 }
@@ -71,4 +71,13 @@
   max-width: 95%;
   width: 80%;
   max-height: 50%;
+}
+
+.MiniSlideDiv {
+  width: auto;
+}
+
+.MiniSlideImg {
+  max-width: 99%;
+  max-height: 20vh;
 }

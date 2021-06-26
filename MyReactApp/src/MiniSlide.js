@@ -3,8 +3,8 @@ import React from 'react';
 function MiniSlide(props){
     return (
         <div className="Slide">
-            <div className="SlideContent center">
-                <img className="SlideImg center" src={props.imgSrc} alt="couldn't load image."></img>
+            <div className="MiniSlideDiv center">
+                <img className="MiniSlideImg center" src={props.imgSrc} alt="couldn't load image."></img>
             </div>
         </div>
     )
