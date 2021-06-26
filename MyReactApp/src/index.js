@@ -4,13 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-export function testItem(content) {
-    return (
-    <p>Given prop: {content}</p>
-    )
-}
-const myItem = <testItem content="rararara"/>
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

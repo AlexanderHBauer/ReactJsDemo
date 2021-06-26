@@ -37,12 +37,38 @@
   }
 }
 
-.vaderDiv {
-  border-style: solid;
-  border: 10px solid red;
+/* Custom items */
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.vaderImg {
-  max-width: 350px;
-  border: 5px dotted green; 
+.mainDiv {
+
+}
+
+.previewSection {
+  float: left;
+  width: 20vw;
+}
+
+.currentSlideShown {
+  float: right;
+  border: 5px solid green;
+  max-width: 80vw;
+  max-height: 100vh;
+}
+
+.Slide {
+  max-width: 100%;
+  border: 5px solid red;
+  border-radius: 15px;
+}
+
+.SlideImg {
+  max-width: 95%;
+  width: 80%;
+  max-height: 50%;
 }
