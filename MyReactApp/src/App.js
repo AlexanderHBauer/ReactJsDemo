@@ -16,12 +16,14 @@ import slideImg004 from './myimages/test004.jpg';
 function App() {
 
   // Custom fuctionality code
+  //let currentHeader = "Test Header";
   let helper = new Helpers();
   let currentImgSource = slideImg002;
   let imgArr = helper.getImgArr();
   // React JS "useState" variables
   let [cntr, setCntr] = useState(1);
   let [currentImg, setcurrentImg] = useState(slideImg001);
+  let [currentHeader, updateHeader] = useState("Test Header");
   // Manipulating the state variables
   const nextImage = (imgSrc) => {
     for (let i = 0; i < imgArr.length; i++){
@@ -53,7 +55,18 @@ function App() {
     setCntr(cntr + helper.findArrayIndex(specImgSrc));
     // Set new value for "currentImg" state via the value of currentimgSource
     setcurrentImg(currentImgSource);
-    }  
+    }
+
+    const updateMainSlide = (header, specImgSrc) => {
+      updateHeader(header);
+      getSpecificImage(specImgSrc);
+    }
+
+  // Define Input Values
+  const header1 = "Screenshot";
+  const header2 = "Feeding";
+  const header3 = "Happy";
+  const header4 = "Sad";
   
 
   // Render HTML
@@ -61,13 +74,13 @@ function App() {
     <div className="mainDiv">
       <div className="previewSection">
         <button onClick={nextImage}>{cntr}</button>
-        <MiniSlide header="Header 1" imgSrc={slideImg001} clickFunction={() => getSpecificImage(slideImg001)}/>
-        <MiniSlide header="Header 1" imgSrc={slideImg002} clickFunction={() => getSpecificImage(slideImg002)}/>
-        <MiniSlide header="Header 1" imgSrc={slideImg003} clickFunction={() => getSpecificImage(slideImg003)}/>
-        <MiniSlide header="Header 1" imgSrc={slideImg004} clickFunction={() => getSpecificImage(slideImg004)}/>
+        <MiniSlide header="Intro" imgSrc={slideImg001} clickFunction={() => updateMainSlide(header1, slideImg001)}/>
+        <MiniSlide header="Custom Items" imgSrc={slideImg002} clickFunction={() => updateMainSlide(header2, slideImg002)}/>
+        <MiniSlide header="State Items" imgSrc={slideImg003} clickFunction={() => updateMainSlide(header3, slideImg003)}/>
+        <MiniSlide header="Further thoughts" imgSrc={slideImg004} clickFunction={() => updateMainSlide(header4, slideImg004)}/>
       </div>
       <div className="currentSlideShown">
-        <Slide header="Header 1" body="one" imgSrc={currentImg}/>
+        <Slide header={currentHeader} imgSrc={currentImg}/>
       </div>
     </div>
   );

@@ -62,6 +62,7 @@
   background-color: rgb(240, 240, 240);
   float: right;
   max-width: 80vw;
+  width: 80vw;
   max-height: 100%;
 }
 
@@ -70,10 +71,13 @@
   border-radius: 15px;
 }
 
+.SlideContent {
+  width: 100%;
+}
+
 .SlideImg {
-  max-width: 95%;
-  width: 80%;
-  max-height: 50%;
+  max-width: 80%;
+  max-height:70vh;
 }
 
 .MiniSlide {
