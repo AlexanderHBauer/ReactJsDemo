@@ -6,7 +6,7 @@ function Slide(props){
             <h2>{props.header}</h2>
             <p>{props.body}</p>
             <div className="SlideContent center">
-                <img className="SlideImg center" src={props.imgSrc} alt="couldn't load image."></img>
+                <img className="SlideImg center" src={props.imgSrc} alt="couldn't load ..."></img>
             </div>
         </div>
     )
