@@ -28,5 +28,13 @@ class Helpers {
     getImgDict(){
         return this.imagesDict;
     }
+
+    findArrayIndex(imgSrc){
+        for (let i = 0; i < this.imagesArr.length; i++){
+            if (this.imagesArr[i] === imgSrc){
+                return i;
+            }
+        }
+    }
 }
 export default Helpers;
