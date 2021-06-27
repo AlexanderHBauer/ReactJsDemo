@@ -3,7 +3,7 @@ import React from 'react';
 function Slide(props){
     return (
         <div className="Slide">
-            <h2>{props.header}</h2>
+            <h1 className="slideH1">{props.header}</h1>
             <p>{props.body}</p>
             <div className="SlideContent center">
                 <img className="SlideImg center" src={props.imgSrc} alt="couldn't load ..."></img>

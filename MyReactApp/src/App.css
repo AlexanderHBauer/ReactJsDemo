@@ -1,3 +1,7 @@
+* {
+ font-size: 32px; 
+}
+
 .App {
   text-align: center;
 }
@@ -53,22 +57,39 @@
 
 .previewSection {
   float: left;
-  width: 15vw;
-  overflow-y: auto;
+  width: 17.5vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   background-color: rgb(206, 237, 246);
+}
+
+.buttonDiv {
+  background-color: rgb(87, 204, 224);
+  border: 1px solid rgb(0, 0, 0);
+  padding: 2px;
+}
+
+.MiniSlidePreview {
+  overflow-y: scroll;
 }
 
 .currentSlideShown {
   background-color: rgb(240, 240, 240);
   float: right;
-  max-width: 85vw;
-  width: 85vw;
+  max-width: 82.5vw;
+  width: 82.5vw;
   max-height: 100%;
 }
 
 .Slide {
   width: 100%;
+  padding-left: 1.5vw;
   border-radius: 15px;
+}
+
+.slideH1 {
+  font-size: 1.5em;
 }
 
 .SlideContent {
@@ -82,6 +103,7 @@
 
 .MiniSlide {
   margin: 2.5vh 0vh;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 .MiniSlide-selected {
