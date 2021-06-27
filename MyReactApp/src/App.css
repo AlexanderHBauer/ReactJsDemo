@@ -53,7 +53,7 @@
 
 .previewSection {
   float: left;
-  width: 20vw;
+  width: 15vw;
   overflow-y: auto;
   background-color: rgb(206, 237, 246);
 }
@@ -61,8 +61,8 @@
 .currentSlideShown {
   background-color: rgb(240, 240, 240);
   float: right;
-  max-width: 80vw;
-  width: 80vw;
+  max-width: 85vw;
+  width: 85vw;
   max-height: 100%;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .MiniSlide {
-  margin: 15vh 0vh;
+  margin: 2.5vh 0vh;
 }
 
 .MiniSlide-selected {

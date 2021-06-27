@@ -1,7 +1,6 @@
 // React JS - General files (official)
 import React, {useState} from 'react';
 import './App.css';
-import './index.js';
 // React JS - custom elements
 import Slide from './Slide';
 import MiniSlide from './MiniSlide';
@@ -16,17 +15,36 @@ import slideImg004 from './myimages/test004.jpg';
 function App() {
 
   // Custom fuctionality code
-  //let currentHeader = "Test Header";
+
+   // Define Input Values
+   const header1 = "Screenshot";
+   const header2 = "Feeding";
+   const header3 = "Happy";
+   const header4 = "Sad";
+ 
+   const body1 = "mybody1";
+   const body2 = "mybody2";
+   const body3 = "mybody3";
+   const body4 = "mybody4";
+
   let helper = new Helpers();
-  let currentImgSource = slideImg002;
+  // Start with first image
+  let currentImgSource = slideImg001;
+  // Get imgArr for later comparison and switching
   let imgArr = helper.getImgArr();
-  // React JS "useState" variables
+
+  // Define React JS "useState" variables for state changes
   let [cntr, setCntr] = useState(1);
   let [currentImg, setcurrentImg] = useState(slideImg001);
-  let [currentHeader, updateHeader] = useState("Test Header");
+  let [currentHeader, updateHeader] = useState(header1);
+  let [currentBody, updateBody] = useState(body1);
+  
   // Manipulating the state variables
-  const nextImage = (imgSrc) => {
+  
+  // Function to  switch to the next possible image in the shown slide item.
+  const nextImage = () => {
     for (let i = 0; i < imgArr.length; i++){
+      // If end of array is reached, reset counter and use first image
         if (currentImg === imgArr[i] && ((i+1) == imgArr.length)){
           currentImgSource = slideImg001;
             setCntr(cntr - cntr + 1);
@@ -57,30 +75,29 @@ function App() {
     setcurrentImg(currentImgSource);
     }
 
-    const updateMainSlide = (header, specImgSrc) => {
+    const updateMainSlide = (header, body, specImgSrc) => {
       updateHeader(header);
+      updateBody(body);
       getSpecificImage(specImgSrc);
     }
 
-  // Define Input Values
-  const header1 = "Screenshot";
-  const header2 = "Feeding";
-  const header3 = "Happy";
-  const header4 = "Sad";
-  
-
-  // Render HTML
+ 
+  // Render HTML (including custom elements) 
   return (
     <div className="mainDiv">
       <div className="previewSection">
-        <button onClick={nextImage}>{cntr}</button>
-        <MiniSlide header="Intro" imgSrc={slideImg001} clickFunction={() => updateMainSlide(header1, slideImg001)}/>
-        <MiniSlide header="Custom Items" imgSrc={slideImg002} clickFunction={() => updateMainSlide(header2, slideImg002)}/>
-        <MiniSlide header="State Items" imgSrc={slideImg003} clickFunction={() => updateMainSlide(header3, slideImg003)}/>
-        <MiniSlide header="Further thoughts" imgSrc={slideImg004} clickFunction={() => updateMainSlide(header4, slideImg004)}/>
+        <div>
+        <span>Continue: </span>   
+        <button onClick={nextImage}>Slide {cntr}</button>
+        </div>
+        
+        <MiniSlide imgSrc={slideImg001} clickFunction={() => updateMainSlide(header1, body1, slideImg001)}/>
+        <MiniSlide imgSrc={slideImg002} clickFunction={() => updateMainSlide(header2, body2, slideImg002)}/>
+        <MiniSlide imgSrc={slideImg003} clickFunction={() => updateMainSlide(header3, body3, slideImg003)}/>
+        <MiniSlide imgSrc={slideImg004} clickFunction={() => updateMainSlide(header4, body4, slideImg004)}/>
       </div>
       <div className="currentSlideShown">
-        <Slide header={currentHeader} imgSrc={currentImg}/>
+        <Slide header={currentHeader} body={currentBody} imgSrc={currentImg}/>
       </div>
     </div>
   );
